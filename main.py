@@ -2,7 +2,7 @@ import pygame
 from game import Game
 pygame.init()
 
-
+#ceci est pout tester
 
 #generer la fenetre de notre jeux
 pygame.display.set_caption("Bow Game")
