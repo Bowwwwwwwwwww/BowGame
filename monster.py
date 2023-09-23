@@ -13,7 +13,7 @@ class Monster(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = 1000
         self.rect.y = 545
-        self.velocity = 2
+        self.velocity = 0
 
 
     def forward(self):
