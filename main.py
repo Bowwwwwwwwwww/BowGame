@@ -8,14 +8,11 @@ pygame.init()
 pygame.display.set_caption("Bow Game")
 screen = pygame.display.set_mode((1080,720))
 
-
-
 #importer l'arriere plan de notre jeux
 background = pygame.image.load('assets/bg.jpg')
 
 #charger notre jeu
 game = Game()
-
 
 running = True
 
@@ -28,6 +25,9 @@ while running:
     #appliquer l'image de notre joueur
     screen.blit(game.player.image, game.player.rect)
 
+    #actualiser la barre de vie du joueur
+    game.player.update_health_bar(screen)
+
     #recupere les projectiles du joueur
     for projectile in game.player.all_projectile:
         projectile.move()
@@ -35,6 +35,7 @@ while running:
     #recupere les monstres de notre jeu
     for monster in game.all_monsters:
         monster.forward()
+        monster.update_health_bar(screen)
 
     #appliquer lensemble des images de mon group projectile
     game.player.all_projectile.draw(screen)
